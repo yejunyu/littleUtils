@@ -11,5 +11,5 @@ user-agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko
 '''
 
 s = s.strip().split('\n')
-s = {x.split(':')[0] : x.split(':')[1] for x in s}
+s = {x.split(':', 1)[0] : x.split(':', 1)[1] for x in s}
 print (s)
