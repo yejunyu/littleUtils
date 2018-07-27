@@ -114,7 +114,7 @@ func buildUrl(res []resource) []string {
 			list = append(list, resItem.url)
 		} else {
 			for i := resItem.start; i <= resItem.end; i++ {
-				urlStr := strings.Replace(resItem.url, resItem.target, string(i), -1)
+				urlStr := strings.Replace(resItem.url, resItem.target, strconv.Itoa(i), -1)
 				list = append(list, urlStr)
 			}
 		}
