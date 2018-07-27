@@ -144,7 +144,7 @@ func randInt(min, max int) int {
 	if min > max {
 		return max
 	}
-	return r.Intn(max-min) + min + 1
+	return r.Intn(max-min+1) + min
 }
 
 func main() {
