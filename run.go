@@ -61,10 +61,6 @@ var monList = []string{
 	"Dec",
 }
 
-var timeList = []string{
-	"[24/Jul/2018:23:22:36 +0800]",
-}
-
 func genRanTime() string {
 	var year = strconv.Itoa(randInt(2017, 2018))
 	var mon = monList[randInt(0, len(monList)-1)]
