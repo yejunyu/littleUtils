@@ -1,14 +1,14 @@
-package main
+package generateLog
 
 import (
 	"flag"
-	"strings"
-	"net/url"
-	"math/rand"
-	"time"
-	"io/ioutil"
 	"fmt"
+	"io/ioutil"
+	"math/rand"
+	"net/url"
 	"strconv"
+	"strings"
+	"time"
 )
 
 type resource struct {
@@ -133,8 +133,8 @@ func makeLog(current, refer, ua, ip string) string {
 	log := strings.Replace(logTemplate, "{$paramStr}", paramStr, -1)
 	log = strings.Replace(log, "{$ua}", ua, -1)
 	log = strings.Replace(log, "{$ip}", ip, -1)
-	log = strings.Replace(log,"{$time}",genRanTime(),-1)
-	log = strings.Replace(log,"{$flow}",strconv.Itoa(randInt(10,10000)),-1)
+	log = strings.Replace(log, "{$time}", genRanTime(), -1)
+	log = strings.Replace(log, "{$flow}", strconv.Itoa(randInt(10, 10000)), -1)
 
 	return log
 }
