@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strings"
 )
 
 func changeAllName(pathRoot string, regString string) error {
@@ -26,14 +27,15 @@ func changeAllName(pathRoot string, regString string) error {
 }
 
 func repalce(filePath string, regString string) string {
-	re3, _ := regexp.Compile(regString)
-	rep := re3.ReplaceAllString(filePath, "")
+	re := strings.Replace(strings.Replace(regString, "[", "\\[", 1), "]", "\\]", 1)
+	re1, _ := regexp.Compile(re)
+	rep := re1.ReplaceAllString(filePath, "")
 	return rep
 }
 
 func main() {
 	pathRoot := flag.String("path", "E:\\BaiduNetdiskDownload\\深入理解Java虚拟机", "文件夹目录的绝对路径")
-	regString := flag.String("filePath", "\\[.*?\\]", "要去掉的字符串")
+	regString := flag.String("str", "[.*?]", "要去掉的字符串")
 	// 需要 parse 来使生效
 	flag.Parse()
 	//遍历打印所有的文件名
