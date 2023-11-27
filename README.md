@@ -1,1 +1,5 @@
-![](http://oqb4aabpb.bkt.clouddn.com/18-2-2/96158655.jpg)
+### mysqlbackup
+mysql 备份脚本
+
+### to
+服务器跳转脚本
