@@ -10,7 +10,7 @@ sqltag=$DataBaseName'_'$DateTag'.'sql
 #压缩文件名字
 tartag=$sqltag'.'tar'.'gz
 #备份
-mysqldump -uyjy -php51yYnbQqjBAWSj --databases $DataBaseName > $BackupDir/$sqltag
+mysqldump -uyjy -php51yYnbQqjBAWS1 --databases $DataBaseName > $BackupDir/$sqltag
 #进行压缩并删除原文件
 # shellcheck disable=SC2164
 cd $BackupDir
